@@ -1,0 +1,22 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" ...>
+    <types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:element name="emitirFactura">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="xml" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="emitirFacturaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="success" type="xs:boolean"/>
+                        <xs:element name="facturaId" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </types>
+    <!-- Más definiciones... -->
+</definitions>
