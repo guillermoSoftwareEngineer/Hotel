@@ -4,12 +4,26 @@ const app = express();
 
 app.use(express.json());
 
+// Endpoint POST original (para comunicación SOA)
 app.post("/translate/reserva-to-factura", (req, res) => {
     const builder = new Builder({rootName: "reserva"});
+    console.log("Datos recibidos del Aggregator:", req.body); // ← Agregar este log
     res.json({
         status: "Éxito",
         xml: builder.buildObject(req.body),
         datos: req.body
+    });
+});
+
+// Nuevo endpoint GET para verificación en navegador
+app.get("/translate/reserva-to-factura", (req, res) => {
+    res.status(200).json({ 
+        servicio: "Bridge SOA Hotel",
+        estado: "Operativo",
+        endpoints: {
+            POST: "/translate/reserva-to-factura",
+            descripción: "Convierte JSON de reserva a XML para facturación"
+        }
     });
 });
 
