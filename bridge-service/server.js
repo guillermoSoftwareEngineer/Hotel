@@ -6,8 +6,8 @@ app.use(express.json());
 
 // Endpoint POST original (para comunicación SOA)
 app.post("/translate/reserva-to-factura", (req, res) => {
-    const builder = new Builder({rootName: "reserva"});
-    console.log("Datos recibidos del Aggregator:", req.body); // ← Agregar este log
+    const builder = new Builder({ rootName: "reserva" });
+    console.log("Datos recibidos del Aggregator:", req.body);
     res.json({
         status: "Éxito",
         xml: builder.buildObject(req.body),
@@ -15,7 +15,7 @@ app.post("/translate/reserva-to-factura", (req, res) => {
     });
 });
 
-// Nuevo endpoint GET para verificación en navegador
+// Endpoint GET para verificación en navegador
 app.get("/translate/reserva-to-factura", (req, res) => {
     res.status(200).json({ 
         servicio: "Bridge SOA Hotel",
@@ -27,4 +27,4 @@ app.get("/translate/reserva-to-factura", (req, res) => {
     });
 });
 
-app.listen(3000, () => console.log("Bridge funcionando en puerto 3000"));
+app.listen(3001, () => console.log("Bridge funcionando en puerto 3001"));

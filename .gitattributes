@@ -1,7 +1,8 @@
-* text=auto
+* text=auto  # Deja que Git maneje los finales de línea automáticamente para archivos de texto
 *.js text eol=lf
-*.jsx text eol=lf
-*.ts text eol=lf
-*.tsx text eol=lf
-*.json text eol=lf
-*.md text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.txt text eol=lf
+*.java text eol=crlf
+*.sh text eol=lf
+*.cmd text eol=crlf

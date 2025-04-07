@@ -9,7 +9,7 @@ import java.util.List;
 public class AggregatorController {
 
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String BRIDGE_URL = "http://localhost:3000/translate/reserva-to-factura";
+    private final String BRIDGE_URL = "http://127.0.0.1:3001/translate/reserva-to-factura";
 
     @PostMapping("/consolidate")
     public String consolidateData(@RequestBody List<Object> messages) {
